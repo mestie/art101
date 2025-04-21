@@ -5,5 +5,21 @@
     padding: 10px;
     margin-bottom: 10px;
     border: solid 1px #888;
-    background-color: #DDD8C4;
+    background-color: #eabe0e;
+    border-radius: 10px;
   }
+  #content {
+    background-color: #58d844;
+    padding: 10px; 
+  }
+  h1{
+    background-color: #e18d33;
+    border-radius: 10px;
+  }
+.everyday-task{ 
+  background-color: aqua;
+  
+}
+.game-task{ 
+  background-color: aqua; 
+}
