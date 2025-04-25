@@ -32,19 +32,24 @@ h1 {
 }
 
 /* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
-.minor-section {
+.minor-section img{
   padding: 10px;
   margin-bottom: 10px;
   border: solid 1px #888;
   background-color: #9b76ac;
 }
-.photo-sketch {
+.photo-section img{ 
  width: 30%;
- height: 30%;
+ height: auto;
  border: 1px solid #888;
 }
-.sketch-section {
+
+.photo-section {
+  display : flex; /* this will make the images line up in a row */
+}
+ 
+.sketch-section img{
   width: 30%;
-  height: 30%;
+  height: auto;
   border: 1px solid #888;
 }
