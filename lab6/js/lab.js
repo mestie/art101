@@ -5,6 +5,8 @@
 //lab assignment my transportaion 
 
 var myMainRide = { 
+  make: "Toyota", 
+  model: "Corolla", 
   color: "grey", 
   year: 2018, 
   age: function() {
