@@ -6,9 +6,8 @@ Date: 6/21/25
 
 */
 //add button to each section 
-$("#challenge").append("<button class='btn btn-secondary highlight-button'>Toggle highlight</button>");
-
+$("#challenge").append("<button id='challengeButton'>Challenge</button>");
 //add a click listener to the challenge button 
 $("#challengeButton").click(function() {
     $(this).parent().toggleClass("special");
-})
+});
