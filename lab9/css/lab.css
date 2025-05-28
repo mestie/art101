@@ -6,7 +6,6 @@
     margin-bottom: 10px;
     border: solid 1px #89ef9f;
     background-color: #9f81f2;
-    -webkit-text-fill-color: rgb(2, 29, 52);
   }
   h1 {
     color: #1e0101;
@@ -26,6 +25,6 @@
     background-color: #82f49d;
   }
   .special {
-    color : #ff0000;
+    font-style: bold;
   }
  
