@@ -1,29 +1,30 @@
 // index.js - Lab 8
 // Author: mestie
-// Date: 5.8.2025
+// Date: 7.3.2025
 
-
-function myNumbers(x){
-    return (x % 2== 0); 
+// Set up AJAX request details 
+const ajazObj = {
+    url: "https://yesno.wtf/api",
+    type: "GET",
+    dataType: "json",
 }
-// test function 
-console.log("Is 1 even? " + myNumbers(1)); 
-console.log("Is 2 even? " + myNumbers(2));
 
-array = [500, 7, 34, 50] 
-console.log("My array", array); 
+// When button is clicked 
+$("#activate").click(function() {
+    console.log("click");
+    // Make the AJAX request
+    $.ajax(ajazObj)
+    
+    // if successful 
+    .done(function(data){
+        console.log("Success");
+        console.log(data);
+        $("#output").text(data.ansewer);
+        $("#image").attr("src", data.image).css("display", "block");
+    })
 
-var result = array.map(myNumbers);
-// should return [true, false, true, true] 
-console.log("Test of evenness of array;", result); 
-
-var result = array.map(function(x){
-    return x ** 0.5; 
-}) 
-// should return [22.36, 2.65, 5.83, 7.07]
-console.log("Square roots of array", result);
-
-// your map results data
-var mapResults = "Your map results here"; 
-// use jQuery to select the element by it ID and set the HTML content
-$("#output").html(mapResults);
+    // if error
+    .fail(function(xhr, status, errorThrown) {
+        console.log(errorThrhown + " Status: " + status);
+    }); 
+})
