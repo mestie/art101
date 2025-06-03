@@ -1,29 +1,23 @@
-// index.js - Lab 8
+// index.js - Lab 11
 // Author: mestie
-// Date: 5.8.2025
+// Date: 7.1.2025
 
 
-function myNumbers(x){
-    return (x % 2== 0); 
+// Sorts the characters of a string in alphabetical order. 
+function sortString(inputString) {
+    // Convert our string to an array and back again to sor it 
+    return inputString.split('').sort().join('');
 }
-// test function 
-console.log("Is 1 even? " + myNumbers(1)); 
-console.log("Is 2 even? " + myNumbers(2));
+// Click listener for button 
+$("#submit").click(function() {
 
-array = [500, 7, 34, 50] 
-console.log("My array", array); 
+// Get the input field
+const userName = $("#user-name").val();
+console.log("you entered: " + userName);
 
-var result = array.map(myNumbers);
-// should return [true, false, true, true] 
-console.log("Test of evenness of array;", result); 
+// now lets sor it 
+userNameSorted = sortString(userName); 
 
-var result = array.map(function(x){
-    return x ** 0.5; 
-}) 
-// should return [22.36, 2.65, 5.83, 7.07]
-console.log("Square roots of array", result);
-
-// your map results data
-var mapResults = "Your map results here"; 
-// use jQuery to select the element by it ID and set the HTML content
-$("#output").html(mapResults);
+// append a new div to our output div 
+$("#output").html('<div class="text"><p>' + userNameSorted + '</p></div>');
+});
