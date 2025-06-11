@@ -1,29 +1,42 @@
-// index.js - Lab 8
+// index.js - Lab 12 debugging
 // Author: mestie
-// Date: 5.8.2025
+// Date: 7.10.2025
 
+// Date: May 2025
 
-function myNumbers(x){
-    return (x % 2== 0); 
-}
-// test function 
-console.log("Is 1 even? " + myNumbers(1)); 
-console.log("Is 2 even? " + myNumbers(2));
-
-array = [500, 7, 34, 50] 
-console.log("My array", array); 
-
-var result = array.map(myNumbers);
-// should return [true, false, true, true] 
-console.log("Test of evenness of array;", result); 
-
-var result = array.map(function(x){
-    return x ** 0.5; 
-}) 
-// should return [22.36, 2.65, 5.83, 7.07]
-console.log("Square roots of array", result);
-
-// your map results data
-var mapResults = "Your map results here"; 
-// use jQuery to select the element by it ID and set the HTML content
-$("#output").html(mapResults);
+// Function to determine the nation based on the length of the name
+function sortNation(num) {
+    let remainder = num % 4; // Get the remainder when dividing the name length by 4
+    let str = "";
+  
+    // Determine the nation based on the remainder
+    if (remainder == 0) {
+      str = "Fire kingdowm!";
+    } else if (remainder == 1) {
+      str = "Earth dwelers!"; 
+    } else if (remainder == 2) {
+      str = "Water nomaids!";
+    } else if (remainder == 3) {
+      str = "Air tribe!";
+    }
+  
+    return str; // Return the determined nation
+  }
+  
+  // Click handler for the button
+  $("#button").click(function () {
+    let name = $("#input").val(); // Get the value entered in the input field
+  
+    // Check if the user entered a name
+    if (name) {
+      console.log("there is data");
+    } else {
+      // Show message if input is empty
+      $("#output").append("Don't forget to enter a name.");
+      return; // Stop further execution if input is missing
+    }
+  
+    let nameLength = name.length; // Get the length of the input name
+    let nation = sortNation(nameLength); // Call function to get the nation based on length
+    $("#output").html("<h1>" + nation + "</h1>"); // Display result on the page
+  });

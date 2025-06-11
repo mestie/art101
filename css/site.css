@@ -25,7 +25,7 @@ h1 {
 
 /* the hashtag in a CSS selector selects an element by id, e.g., id="content" */
 #content {
-  margin: 10px;
+  margin: 30px;
   padding: 10px;
   border: solid 1px #888;
   background-color: #6b7fae;
@@ -35,11 +35,11 @@ h1 {
 .minor-section img{
   padding: 10px;
   margin-bottom: 10px;
-  border: solid 1px #888;
+  border: solid 10px #bf1515;
   background-color: #9b76ac;
 }
 .photo-section img{ 
- width: 30%;
+ width: 40%;
  height: auto;
  border: 1px solid #888;
 }
@@ -49,7 +49,7 @@ h1 {
 }
  
 .sketch-section img{
-  width: 30%;
+  width: 40%;
   height: auto;
   border: 1px solid #888;
 }
