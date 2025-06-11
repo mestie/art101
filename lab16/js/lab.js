@@ -1,29 +1,38 @@
-// index.js - Lab 8
-// Author: mestie
-// Date: 5.8.2025
+// index.js - Lab 16
+// Author: mestie thomas
+// Date: June 10 2025
 
-
-function myNumbers(x){
-    return (x % 2== 0); 
-}
-// test function 
-console.log("Is 1 even? " + myNumbers(1)); 
-console.log("Is 2 even? " + myNumbers(2));
-
-array = [500, 7, 34, 50] 
-console.log("My array", array); 
-
-var result = array.map(myNumbers);
-// should return [true, false, true, true] 
-console.log("Test of evenness of array;", result); 
-
-var result = array.map(function(x){
-    return x ** 0.5; 
-}) 
-// should return [22.36, 2.65, 5.83, 7.07]
-console.log("Square roots of array", result);
-
-// your map results data
-var mapResults = "Your map results here"; 
-// use jQuery to select the element by it ID and set the HTML content
-$("#output").html(mapResults);
+// ajax obj
+const ajaxObj = {
+    url: "https://corsproxy.io/?https://xkcd.com/info.0.json",
+    type: "GET",
+    dataType: "json"
+  }
+  
+  // button listener
+  $("button").click(function(){
+  console.log("Button clicked")
+  
+    // call ajax
+    $.ajax(ajaxObj)
+    // success callback
+    .done(function(data) {
+      console.log(data);
+      // pull out relevant data from results
+      let title = data.title;
+      let num = data.num;
+      let desc = data.transcript;
+      let imageUrl = data.img;
+      // put data in output
+      $("#output").html(`<h2>${title}</h2>`);
+      $("#output").append(`<img src='${imageUrl}' />`);
+      $("#output").append(`<p class='date'>Comic: ${num}</p>`);
+      $("#output").append(`<p class='desc'>${desc}</p>`);
+    })
+    // fail callback
+    .fail(function(xhr, status, error) { 
+      // Error handler
+      console.error(error); 
+    })
+    
+  })
